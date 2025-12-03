@@ -1,9 +1,12 @@
-<x-app-layout>
-    <x-slot name="header">
+@extends('layouts.admin')
+
+@section('content')
+<div class="container mx-auto px-4">
+    <div class="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
         </h2>
-    </x-slot>
+    </div>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
@@ -26,4 +29,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</div>
+@endsection

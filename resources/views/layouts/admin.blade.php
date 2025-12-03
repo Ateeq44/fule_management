@@ -11,6 +11,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <style>
+        .btn-check:focus+.btn-secondary, .btn-secondary:focus {
+            color: #fff;
+            background-color: #5c636a;
+            border-color: #565e64;
+            box-shadow: unset !important;
+        }
+    </style>
 </head>
 <body>
     {{-- NAVBAR START --}}
@@ -54,7 +62,7 @@
 
                 </ul>
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle bg-dark border-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
