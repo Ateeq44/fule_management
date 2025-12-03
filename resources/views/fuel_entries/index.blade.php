@@ -4,8 +4,8 @@
 <div class="container">
 
     <div class="d-flex justify-content-between mb-3">
-        <h2>Fuel Entries</h2>
-        <a href="{{ route('fuel_entries.create') }}" class="btn btn-primary">Add Fuel Entry</a>
+        <h2>Registros de Combustible</h2>
+        <a href="{{ route('fuel_entries.create') }}" class="btn btn-primary">Agregar Registro de Combustible</a>
     </div>
 
     @if(session('success'))
@@ -15,15 +15,15 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Vehicle</th>
-                <th>Driver</th>
-                <th>Liters</th>
-                <th>Total Cost</th>
-                <th>Odometer</th>
-                <th>Station</th>
-                <th>Receipt</th>
-                <th>Actions</th>
+                <th>Fecha</th>
+                <th>Vehículo</th>
+                <th>Conductor</th>
+                <th>Litros</th>
+                <th>Costo Total</th>
+                <th>Odómetro</th>
+                <th>Estación</th>
+                <th>Recibo</th>
+                <th>Acciones</th>
             </tr>
         </thead>
 
@@ -44,12 +44,16 @@
                     </td>
 
                     <td>
-                        <a href="{{ route('fuel_entries.edit', $entry->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ route('fuel_entries.edit', $entry->id) }}" class="btn btn-sm btn-success">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
 
                         <form action="{{ route('fuel_entries.destroy', $entry->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button onclick="return confirm('Delete this entry?')" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                            <button onclick="return confirm('¿Eliminar este registro?')" class="btn btn-sm btn-danger">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
                         </form>
                     </td>
 

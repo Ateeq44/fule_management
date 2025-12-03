@@ -25,6 +25,7 @@ class VehicleController extends Controller
             'registration_number' => 'required',
             'model' => 'required',
             'type' => 'required',
+            'plate_number' => 'required',
         ]);
 
         Vehicle::create($request->all());
@@ -44,6 +45,7 @@ class VehicleController extends Controller
             'registration_number' => 'required',
             'model' => 'required',
             'type' => 'required',
+            'plate_number' => 'required',
         ]);
 
         $vehicle->update($request->all());

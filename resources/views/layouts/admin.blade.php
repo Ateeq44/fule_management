@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,8 +25,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
             
-            <a class="navbar-brand" href="{{ url('/') }}">
-                Fuel Management
+            <a class="navbar-brand" href="{{ url('admin/dashboard') }}">
+                Gestión de Combustible
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,25 +39,27 @@
 
                     <!-- Dashboard -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admin/dashboard') }}">Dashboard</a>
+                        <a class="nav-link" href="{{ url('/admin/dashboard') }}">Panel</a>
                     </li>
 
                     <!-- Vehicles -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('vehicles.index') }}">Vehicles</a>
+                        <a class="nav-link" href="{{ route('vehicles.index') }}">Vehículos</a>
                     </li>
 
                     <!-- Drivers -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('drivers.index') }}">Drivers</a>
+                        <a class="nav-link" href="{{ route('drivers.index') }}">Conductores</a>
                     </li>
+
                     <!-- Fuel Entries -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('fuel_entries.index') }}">Fuel Entries</a>                   
+                        <a class="nav-link" href="{{ route('fuel_entries.index') }}">Entradas de Combustible</a>                   
                     </li>
+
                     <!-- Entries Reports -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.reports') }}">Reports</a>                   
+                        <a class="nav-link" href="{{ route('admin.reports') }}">Informes</a>                   
                     </li>    
 
                 </ul>
@@ -66,41 +68,20 @@
                         {{ Auth::user()->name }}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="{{route('profile.edit')}}">{{ __('Profile') }}</a></li>
+                        <li><a class="dropdown-item" href="{{route('profile.edit')}}">{{ __('Perfil') }}</a></li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                         <li><a class="dropdown-item" href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">{{ __('Log Out') }}</a></li>
+                                                this.closest('form').submit();">{{ __('Cerrar Sesión') }}</a></li>
                         </form>
                     </ul>
                 </div>
-                <!-- <div class="pt-4 pb-1 border-t border-gray-200">
-                    <div class="px-4">
-                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                        <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                    </div>
 
-                    <div class="mt-3 space-y-1">
-                        <x-responsive-nav-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-responsive-nav-link>
-
-                        <!-- Authentication -->
-                        <!--  <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-
-                            <x-responsive-nav-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-responsive-nav-link>
-                        </form>
-                    </div>
-                </div> -->
             </div>
         </div>
     </nav>
     {{-- NAVBAR END --}}
+
     @yield('content')
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

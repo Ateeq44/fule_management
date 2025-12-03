@@ -1,19 +1,19 @@
 <section class="py-3">
     <header>
         <h2 class="h5 text-dark">
-            Delete Account
+            Eliminar Cuenta
         </h2>
 
         <p class="text-muted small mt-1">
-            Once your account is deleted, all of its resources and data will be permanently deleted.
-            Before deleting your account, please download any data or information that you wish to retain.
+            Una vez que su cuenta sea eliminada, todos sus recursos y datos se eliminarán de forma permanente.
+            Antes de eliminar su cuenta, descargue cualquier dato o información que desee conservar.
         </p>
     </header>
 
     <!-- Delete Button -->
     <button type="button" class="btn btn-danger"
         data-bs-toggle="modal" data-bs-target="#confirmUserDeletionModal">
-        Delete Account
+        Eliminar Cuenta
     </button>
 
     <!-- Bootstrap Modal -->
@@ -26,24 +26,24 @@
                     @method('delete')
 
                     <div class="modal-header">
-                        <h5 class="modal-title" id="deleteModalLabel">Are you sure you want to delete your account?</h5>
+                        <h5 class="modal-title" id="deleteModalLabel">¿Está seguro de que desea eliminar su cuenta?</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
 
                     <div class="modal-body">
                         <p class="text-muted small">
-                            Once your account is deleted, all of its resources and data will be permanently deleted.
-                            Please enter your password to confirm you would like to permanently delete your account.
+                            Una vez que su cuenta sea eliminada, todos sus recursos y datos se eliminarán de forma permanente.
+                            Ingrese su contraseña para confirmar que desea eliminar permanentemente su cuenta.
                         </p>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
+                            <label for="password" class="form-label">Contraseña</label>
                             <input
                                 type="password"
                                 name="password"
                                 id="password"
                                 class="form-control @error('password') is-invalid @enderror"
-                                placeholder="Password"
+                                placeholder="Contraseña"
                             >
                             @error('password')
                                 <div class="invalid-feedback d-block">{{ $message }}</div>
@@ -53,10 +53,10 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                            Cancel
+                            Cancelar
                         </button>
                         <button type="submit" class="btn btn-danger">
-                            Delete Account
+                            Eliminar Cuenta
                         </button>
                     </div>
 

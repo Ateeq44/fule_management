@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h2>Add Fuel Entry</h2>
+    <h2>Agregar Registro de Combustible</h2>
 
     <form action="{{ route('fuel_entries.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -11,9 +11,9 @@
         <div class="row">
 
             <div class="col-md-6 mb-3">
-                <label>Vehicle</label>
+                <label>Vehículo</label>
                 <select name="vehicle_id" class="form-control" required>
-                    <option value="">Select Vehicle</option>
+                    <option value="">Seleccionar Vehículo</option>
                     @foreach($vehicles as $v)
                         <option value="{{ $v->id }}">{{ $v->registration_number }}</option>
                     @endforeach
@@ -21,9 +21,9 @@
             </div>
 
             <div class="col-md-6 mb-3">
-                <label>Driver</label>
+                <label>Conductor</label>
                 <select name="driver_id" class="form-control" required>
-                    <option value="">Select Driver</option>
+                    <option value="">Seleccionar Conductor</option>
                     @foreach($drivers as $d)
                         <option value="{{ $d->id }}">{{ $d->name }}</option>
                     @endforeach
@@ -33,37 +33,37 @@
         </div>
 
         <div class="mb-3">
-            <label>Date</label>
+            <label>Fecha</label>
             <input type="date" name="date" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label>Liters</label>
+            <label>Litros</label>
             <input type="number" step="0.01" name="liters" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label>Total Cost</label>
+            <label>Costo Total</label>
             <input type="number" step="0.01" name="total_cost" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label>Odometer Reading</label>
+            <label>Lectura del Odómetro</label>
             <input type="number" name="odometer" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label>Station Name</label>
+            <label>Nombre de la Estación</label>
             <input type="text" name="station_name" class="form-control" required>
         </div>
 
         <div class="mb-3">
-            <label>Upload Receipt</label>
+            <label>Subir Recibo</label>
             <input type="file" name="receipt_image" class="form-control" required>
         </div>
 
-        <button class="btn btn-success">Save</button>
-        <a href="{{ route('fuel_entries.index') }}" class="btn btn-secondary">Back</a>
+        <button class="btn btn-success">Guardar</button>
+        <a href="{{ route('fuel_entries.index') }}" class="btn btn-secondary">Regresar</a>
 
     </form>
 

@@ -10,5 +10,6 @@ class Vehicle extends Model
         'registration_number',
         'model',
         'type',
+        'plate_number',
     ];
 }

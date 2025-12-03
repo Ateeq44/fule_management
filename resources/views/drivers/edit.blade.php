@@ -3,27 +3,27 @@
 @section('content')
 <div class="container">
 
-    <h2>Edit Driver</h2>
+    <h2>Editar Conductor</h2>
 
     <form action="{{ route('drivers.update', $driver->id) }}" method="POST">
         @csrf
         @method('PUT')
         
         <div class="mb-3">
-            <label>Driver Name</label>
+            <label>Nombre del Conductor</label>
             <input type="text" name="name" class="form-control" value="{{ $driver->name }}" required>
         </div>
 
         <div class="mb-3">
-            <label>Phone</label>
+            <label>Teléfono</label>
             <input type="text" name="phone" class="form-control" value="{{ $driver->phone }}" required>
         </div>
 
         <div class="mb-3">
-            <label>Assign Vehicle</label>
+            <label>Asignar Vehículo</label>
             <select name="assigned_vehicle_id" class="form-control">
                 
-                <option value="">No Vehicle</option>
+                <option value="">Sin Vehículo</option>
 
                 @foreach($vehicles as $vehicle)
                     <option value="{{ $vehicle->id }}" 
@@ -35,8 +35,8 @@
             </select>
         </div>
 
-        <button class="btn btn-primary">Update</button>
-        <a href="{{ route('drivers.index') }}" class="btn btn-secondary">Back</a>
+        <button class="btn btn-primary">Actualizar</button>
+        <a href="{{ route('drivers.index') }}" class="btn btn-secondary">Volver</a>
 
     </form>
 

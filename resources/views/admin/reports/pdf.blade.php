@@ -1,21 +1,20 @@
-
 <div class="container">
 
-<h2>Fuel Report</h2>
+<h2>Informe de Combustible</h2>
 
-<p><strong>Total Liters:</strong> {{ $totalLiters }}</p>
-<p><strong>Total Cost:</strong> ${{ $totalCost }}</p>
+<p><strong>Total de Litros:</strong> {{ $totalLiters }}</p>
+<p><strong>Costo Total:</strong> ${{ $totalCost }}</p>
 
 <table width="100%" border="1" cellspacing="0" cellpadding="5">
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Vehicle</th>
-            <th>Driver</th>
-            <th>Liters</th>
-            <th>Cost</th>
-            <th>Odometer</th>
-            <th>Station</th>
+            <th>Fecha</th>
+            <th>Vehículo</th>
+            <th>Conductor</th>
+            <th>Litros</th>
+            <th>Costo</th>
+            <th>Odómetro</th>
+            <th>Estación</th>
         </tr>
     </thead>
 
@@ -34,5 +33,4 @@
     </tbody>
 </table>
 
-    
 </div>

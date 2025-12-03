@@ -4,8 +4,8 @@
 <div class="container">
 
     <div class="d-flex justify-content-between mb-3">
-        <h2>Drivers</h2>
-        <a href="{{ route('drivers.create') }}" class="btn btn-primary">Add Driver</a>
+        <h2>Conductores</h2>
+        <a href="{{ route('drivers.create') }}" class="btn btn-primary">Agregar Conductor</a>
     </div>
 
     @if(session('success'))
@@ -15,29 +15,33 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Driver Name</th>
-                <th>Phone</th>
-                <th>Assigned Vehicle</th>
-                <th>Actions</th>
+                <!-- <th>ID</th> -->
+                <th>Nombre del Conductor</th>
+                <th>Teléfono</th>
+                <th>Vehículo Asignado</th>
+                <th>Acciones</th>
             </tr>
         </thead>
 
         <tbody>
             @foreach($drivers as $driver)
                 <tr>
-                    <td>{{ $driver->id }}</td>
+                    <!-- <td>{{ $driver->id }}</td> -->
                     <td>{{ $driver->name }}</td>
                     <td>{{ $driver->phone }}</td>
-                    <td>{{ $driver->vehicle->registration_number ?? 'Not Assigned' }}</td>
+                    <td>{{ $driver->vehicle->registration_number ?? 'No Asignado' }}</td>
 
                     <td>
-                        <a href="{{ route('drivers.edit', $driver->id) }}" class="btn btn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="{{ route('drivers.edit', $driver->id) }}" class="btn btn-sm btn-success">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
 
                         <form action="{{ route('drivers.destroy', $driver->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this driver?')"><i class="fa-solid fa-trash-can"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este conductor?')">
+                                <i class="fa-solid fa-trash-can"></i>
+                            </button>
                         </form>
 
                     </td>

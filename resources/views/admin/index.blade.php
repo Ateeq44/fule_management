@@ -4,65 +4,65 @@
 
 <div class="container">
 
-    <h2>Dashboard Overview</h2>
+    <h2>Resumen del Tablero</h2>
 
     <div class="row mt-4">
 
-        <!-- Weekly Liters -->
+        <!-- Litros Semanales -->
         <div class="col-md-4">
             <div class="card bg-primary text-white mb-3">
                 <div class="card-body">
-                    <h6>Weekly Liters</h6>
+                    <h6>Litros Semanales</h6>
                     <h3>{{ $weeklyLiters }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Weekly Cost -->
+        <!-- Costo Semanal -->
         <div class="col-md-4">
             <div class="card bg-success text-white mb-3">
                 <div class="card-body">
-                    <h6>Weekly Cost</h6>
+                    <h6>Costo Semanal</h6>
                     <h3>${{ $weeklyCost }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Weekly Entries -->
+        <!-- Registros Semanales -->
         <div class="col-md-4">
             <div class="card bg-info text-white mb-3">
                 <div class="card-body">
-                    <h6>Weekly Entries</h6>
+                    <h6>Registros Semanales</h6>
                     <h3>{{ $weeklyEntries }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Monthly Liters -->
+        <!-- Litros Mensuales -->
         <div class="col-md-4">
             <div class="card bg-warning text-white mb-3">
                 <div class="card-body">
-                    <h6>Monthly Liters</h6>
+                    <h6>Litros Mensuales</h6>
                     <h3>{{ $monthlyLiters }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Monthly Cost -->
+        <!-- Costo Mensual -->
         <div class="col-md-4">
             <div class="card bg-danger text-white mb-3">
                 <div class="card-body">
-                    <h6>Monthly Cost</h6>
+                    <h6>Costo Mensual</h6>
                     <h3>${{ $monthlyCost }}</h3>
                 </div>
             </div>
         </div>
 
-        <!-- Monthly Entries -->
+        <!-- Registros Mensuales -->
         <div class="col-md-4">
             <div class="card bg-dark text-white mb-3">
                 <div class="card-body">
-                    <h6>Monthly Entries</h6>
+                    <h6>Registros Mensuales</h6>
                     <h3>{{ $monthlyEntries }}</h3>
                 </div>
             </div>
@@ -72,20 +72,20 @@
 
     <div class="row mt-4">
 
-        <!-- Chart 1 -->
+        <!-- Gráfico 1 -->
         <div class="col-md-6">
             <div class="card mb-4">
-                <div class="card-header">Fuel Consumption (Last 6 Weeks)</div>
+                <div class="card-header">Consumo de Combustible (Últimas 6 Semanas)</div>
                 <div class="card-body">
                     <canvas id="weeklyChart"></canvas>
                 </div>
             </div>
         </div>
 
-        <!-- Chart 2 -->
+        <!-- Gráfico 2 -->
         <div class="col-md-6">
             <div class="card mb-4">
-                <div class="card-header">Fuel Consumption per Vehicle</div>
+                <div class="card-header">Consumo de Combustible por Vehículo</div>
                 <div class="card-body">
                     <canvas id="vehicleChart"></canvas>
                 </div>
@@ -99,13 +99,13 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    // Weekly Chart
+    // Gráfico Semanal
     new Chart(document.getElementById('weeklyChart'), {
         type: 'line',
         data: {
             labels: @json($weeks),
             datasets: [{
-                label: 'Liters',
+                label: 'Litros',
                 data: @json($weekFuel),
                 borderColor: 'blue',
                 backgroundColor: 'lightblue',
@@ -115,13 +115,13 @@
         }
     });
 
-    // Vehicle Chart
+    // Gráfico por Vehículo
     new Chart(document.getElementById('vehicleChart'), {
         type: 'bar',
         data: {
             labels: @json($vehicleNames),
             datasets: [{
-                label: 'Liters',
+                label: 'Litros',
                 data: @json($vehicleFuel),
                 backgroundColor: 'orange'
             }]
